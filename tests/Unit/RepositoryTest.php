@@ -20,18 +20,6 @@ class RepositoryTest extends TestCase
     /**
      * @throws UndefinedGatewayException
      */
-    public function testItInitializeWithoutAttributes()
-    {
-        $repository = new RepositoryMock();
-
-        $this->assertSame(null, $repository->getNext());
-        $this->expectException(UndefinedGatewayException::class);
-        $repository->getGateway();
-    }
-
-    /**
-     * @throws UndefinedGatewayException
-     */
     public function testItInitializeWithGateway()
     {
         $gateway = new GatewayMock();
@@ -87,25 +75,5 @@ class RepositoryTest extends TestCase
 
         $repository = new RepositoryMock();
         $repository->getGateway();
-    }
-
-    public function testItInitializeWithNext()
-    {
-        $gateway = new GatewayMock();
-        $next = new RepositoryMock();
-
-        $repository = new RepositoryMock($gateway, $next);
-
-        $this->assertSame($next, $repository->getNext());
-    }
-
-    public function testItInitializeNextUsingSetter()
-    {
-        $next = new RepositoryMock();
-
-        $repository = new RepositoryMock();
-
-        $this->assertSame($repository, $repository->setNext($next));
-        $this->assertSame($next, $repository->getNext());
     }
 }

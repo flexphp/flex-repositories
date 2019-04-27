@@ -9,11 +9,10 @@ namespace FlexPHP\Repositories;
 interface RepositoryInterface
 {
     /**
-     * RepositoryInterface constructor. Accept gateway and next repository to execute
+     * RepositoryInterface constructor.
      * @param mixed $gateway
-     * @param RepositoryInterface $next
      */
-    public function __construct($gateway, ?RepositoryInterface $next = null);
+    public function __construct($gateway);
 
     /**
      * Set client|connection to use in repository
@@ -29,19 +28,4 @@ interface RepositoryInterface
      * @return mixed
      */
     public function getGateway();
-
-    /**
-     * Set next repository to execute
-     *
-     * @param RepositoryInterface $next
-     * @return RepositoryInterface
-     */
-    public function setNext(RepositoryInterface $next): RepositoryInterface;
-
-    /**
-     * Get next repository to execute
-     *
-     * @return RepositoryInterface
-     */
-    public function getNext(): ?RepositoryInterface;
 }

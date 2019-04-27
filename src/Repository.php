@@ -15,19 +15,10 @@ abstract class Repository implements RepositoryInterface
      */
     private $gateway;
 
-    /**
-     * @var RepositoryInterface
-     */
-    private $next;
-
-    public function __construct($gateway = null, ?RepositoryInterface $next = null)
+    public function __construct($gateway = null)
     {
         if ($gateway) {
             $this->setGateway($gateway);
-        }
-
-        if ($next) {
-            $this->setNext($next);
         }
     }
 
@@ -49,17 +40,5 @@ abstract class Repository implements RepositoryInterface
         }
 
         return $this->gateway;
-    }
-
-    public function setNext(RepositoryInterface $next): RepositoryInterface
-    {
-        $this->next = $next;
-
-        return $this;
-    }
-
-    public function getNext(): ?RepositoryInterface
-    {
-        return $this->next;
     }
 }
