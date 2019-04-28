@@ -17,7 +17,7 @@ abstract class Repository implements RepositoryInterface
 
     public function __construct($gateway = null)
     {
-        if ($gateway) {
+        if (!\is_null($gateway)) {
             $this->setGateway($gateway);
         }
     }
@@ -35,7 +35,7 @@ abstract class Repository implements RepositoryInterface
      */
     public function getGateway()
     {
-        if (is_null($this->gateway)) {
+        if (\is_null($this->gateway)) {
             throw new UndefinedGatewayRepositoryException();
         }
 
