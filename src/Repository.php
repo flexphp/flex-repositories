@@ -2,7 +2,7 @@
 
 namespace FlexPHP\Repositories;
 
-use FlexPHP\Repositories\Exception\UndefinedGatewayException;
+use FlexPHP\Repositories\Exception\UndefinedGatewayRepositoryException;
 
 /**
  * Class Repository
@@ -31,12 +31,12 @@ abstract class Repository implements RepositoryInterface
 
     /**
      * @return mixed
-     * @throws UndefinedGatewayException
+     * @throws UndefinedGatewayRepositoryException
      */
     public function getGateway()
     {
         if (is_null($this->gateway)) {
-            throw new UndefinedGatewayException();
+            throw new UndefinedGatewayRepositoryException();
         }
 
         return $this->gateway;

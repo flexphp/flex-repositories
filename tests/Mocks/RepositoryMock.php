@@ -14,7 +14,7 @@ class RepositoryMock extends Repository
     /**
      * @param array $item
      * @return int
-     * @throws \FlexPHP\Repositories\Exception\UndefinedGatewayException
+     * @throws \FlexPHP\Repositories\Exception\UndefinedGatewayRepositoryException
      */
     public function push(array $item)
     {
@@ -24,7 +24,7 @@ class RepositoryMock extends Repository
     /**
      * @param int $id
      * @return array|null
-     * @throws \FlexPHP\Repositories\Exception\UndefinedGatewayException
+     * @throws \FlexPHP\Repositories\Exception\UndefinedGatewayRepositoryException
      */
     public function get(int $id)
     {
@@ -35,7 +35,7 @@ class RepositoryMock extends Repository
      * @param int $id
      * @param array $item
      * @return bool
-     * @throws \FlexPHP\Repositories\Exception\UndefinedGatewayException
+     * @throws \FlexPHP\Repositories\Exception\UndefinedGatewayRepositoryException
      */
     public function shift(int $id, array $item)
     {
@@ -45,7 +45,7 @@ class RepositoryMock extends Repository
     /**
      * @param int $id
      * @return bool
-     * @throws \FlexPHP\Repositories\Exception\UndefinedGatewayException
+     * @throws \FlexPHP\Repositories\Exception\UndefinedGatewayRepositoryException
      */
     public function pop(int $id)
     {

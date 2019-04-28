@@ -2,7 +2,7 @@
 
 namespace FlexPHP\Repositories\Tests\Unit;
 
-use FlexPHP\Repositories\Exception\UndefinedGatewayException;
+use FlexPHP\Repositories\Exception\UndefinedGatewayRepositoryException;
 use FlexPHP\Repositories\RepositoryInterface;
 use FlexPHP\Repositories\Tests\Mocks\GatewayMock;
 use FlexPHP\Repositories\Tests\Mocks\RepositoryMock;
@@ -18,7 +18,7 @@ class RepositoryTest extends TestCase
     }
 
     /**
-     * @throws UndefinedGatewayException
+     * @throws UndefinedGatewayRepositoryException
      */
     public function testItInitializeWithGateway()
     {
@@ -30,7 +30,7 @@ class RepositoryTest extends TestCase
     }
 
     /**
-     * @throws UndefinedGatewayException
+     * @throws UndefinedGatewayRepositoryException
      */
     public function testItInitializeGatewayUsingSetter()
     {
@@ -43,7 +43,7 @@ class RepositoryTest extends TestCase
     }
 
     /**
-     * @throws UndefinedGatewayException
+     * @throws UndefinedGatewayRepositoryException
      */
     public function testItUseGateway()
     {
@@ -67,11 +67,11 @@ class RepositoryTest extends TestCase
     }
 
     /**
-     * @throws UndefinedGatewayException
+     * @throws UndefinedGatewayRepositoryException
      */
     public function testItGetUndefinedGatewayThrowException()
     {
-        $this->expectException(UndefinedGatewayException::class);
+        $this->expectException(UndefinedGatewayRepositoryException::class);
 
         $repository = new RepositoryMock();
         $repository->getGateway();
