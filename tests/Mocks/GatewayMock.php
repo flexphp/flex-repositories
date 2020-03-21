@@ -1,20 +1,20 @@
-<?php
-
+<?php declare(strict_types=1);
+/*
+ * This file is part of FlexPHP.
+ *
+ * (c) Freddie Gar <freddie.gar@outlook.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace FlexPHP\Repositories\Tests\Mocks;
 
-/**
- * Class GatewayMock
- * @package FlexPHP\Repositories\Tests\Mocks
- */
-class GatewayMock
+final class GatewayMock
 {
     private $collection = [];
 
     /**
      * Add item in collection and return id assigned
-     *
-     * @param array $item
-     * @return int
      */
     public function create(array $item): int
     {
@@ -26,9 +26,6 @@ class GatewayMock
 
     /**
      * Get item in collection
-     *
-     * @param int $id
-     * @return array|null
      */
     public function read(int $id): ?array
     {
@@ -41,10 +38,6 @@ class GatewayMock
 
     /**
      * Edit item in collection
-     *
-     * @param int $id
-     * @param array $item
-     * @return bool
      */
     public function update(int $id, array $item): bool
     {
@@ -59,9 +52,6 @@ class GatewayMock
 
     /**
      * Remove item in collection
-     *
-     * @param int $id
-     * @return bool
      */
     public function delete(int $id): bool
     {

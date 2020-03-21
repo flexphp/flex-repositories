@@ -1,20 +1,25 @@
-<?php
-
+<?php declare(strict_types=1);
+/*
+ * This file is part of FlexPHP.
+ *
+ * (c) Freddie Gar <freddie.gar@outlook.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace FlexPHP\Repositories\Tests\Mocks;
 
 use FlexPHP\Repositories\Repository;
 
 /**
- * Class RepositoryMock
- * @package FlexPHP\Repositories\Tests\Mocks
  * @method GatewayMock getGateway()
  */
-class RepositoryMock extends Repository
+final class RepositoryMock extends Repository
 {
     /**
-     * @param array $item
-     * @return int
      * @throws \FlexPHP\Repositories\Exception\UndefinedGatewayRepositoryException
+     *
+     * @return int
      */
     public function push(array $item)
     {
@@ -22,9 +27,9 @@ class RepositoryMock extends Repository
     }
 
     /**
-     * @param int $id
-     * @return array|null
      * @throws \FlexPHP\Repositories\Exception\UndefinedGatewayRepositoryException
+     *
+     * @return null|array
      */
     public function get(int $id)
     {
@@ -32,10 +37,9 @@ class RepositoryMock extends Repository
     }
 
     /**
-     * @param int $id
-     * @param array $item
-     * @return bool
      * @throws \FlexPHP\Repositories\Exception\UndefinedGatewayRepositoryException
+     *
+     * @return bool
      */
     public function shift(int $id, array $item)
     {
@@ -43,9 +47,9 @@ class RepositoryMock extends Repository
     }
 
     /**
-     * @param int $id
-     * @return bool
      * @throws \FlexPHP\Repositories\Exception\UndefinedGatewayRepositoryException
+     *
+     * @return bool
      */
     public function pop(int $id)
     {

@@ -1,5 +1,12 @@
-<?php
-
+<?php declare(strict_types=1);
+/*
+ * This file is part of FlexPHP.
+ *
+ * (c) Freddie Gar <freddie.gar@outlook.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace FlexPHP\Repositories\Tests\Unit;
 
 use FlexPHP\Repositories\Exception\UndefinedGatewayRepositoryException;
@@ -10,7 +17,7 @@ use FlexPHP\Repositories\Tests\TestCase;
 
 class RepositoryTest extends TestCase
 {
-    public function testItUseInterface()
+    public function testItUseInterface(): void
     {
         $repository = new RepositoryMock();
 
@@ -20,7 +27,7 @@ class RepositoryTest extends TestCase
     /**
      * @throws UndefinedGatewayRepositoryException
      */
-    public function testItInitializeWithGateway()
+    public function testItInitializeWithGateway(): void
     {
         $gateway = new GatewayMock();
 
@@ -32,7 +39,7 @@ class RepositoryTest extends TestCase
     /**
      * @throws UndefinedGatewayRepositoryException
      */
-    public function testItInitializeGatewayUsingSetter()
+    public function testItInitializeGatewayUsingSetter(): void
     {
         $gateway = new GatewayMock();
 
@@ -45,7 +52,7 @@ class RepositoryTest extends TestCase
     /**
      * @throws UndefinedGatewayRepositoryException
      */
-    public function testItUseGateway()
+    public function testItUseGateway(): void
     {
         $gateway = new GatewayMock();
 
@@ -69,7 +76,7 @@ class RepositoryTest extends TestCase
     /**
      * @throws UndefinedGatewayRepositoryException
      */
-    public function testItGetUndefinedGatewayThrowException()
+    public function testItGetUndefinedGatewayThrowException(): void
     {
         $this->expectException(UndefinedGatewayRepositoryException::class);
 
