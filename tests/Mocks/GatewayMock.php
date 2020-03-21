@@ -11,6 +11,9 @@ namespace FlexPHP\Repositories\Tests\Mocks;
 
 final class GatewayMock
 {
+    /**
+     * @var array<int, array>
+     */
     private $collection = [];
 
     /**
@@ -18,34 +21,34 @@ final class GatewayMock
      */
     public function create(array $item): int
     {
-        $id = $this->count() + 1;
-        $this->collection[$id] = $item;
+        $identifier = $this->count() + 1;
+        $this->collection[$identifier] = $item;
 
-        return $id;
+        return $identifier;
     }
 
     /**
      * Get item in collection
      */
-    public function read(int $id): ?array
+    public function read(int $identifier): ?array
     {
-        if (!$this->exist($id)) {
+        if (!$this->exist($identifier)) {
             return null;
         }
 
-        return $this->collection[$id];
+        return $this->collection[$identifier];
     }
 
     /**
      * Edit item in collection
      */
-    public function update(int $id, array $item): bool
+    public function update(int $identifier, array $item): bool
     {
-        if (!$this->exist($id)) {
+        if (!$this->exist($identifier)) {
             return false;
         }
 
-        $this->collection[$id] = $item;
+        $this->collection[$identifier] = $item;
 
         return true;
     }
@@ -53,23 +56,23 @@ final class GatewayMock
     /**
      * Remove item in collection
      */
-    public function delete(int $id): bool
+    public function delete(int $identifier): bool
     {
-        if (!$this->exist($id)) {
+        if (!$this->exist($identifier)) {
             return false;
         }
 
-        unset($this->collection[$id]);
+        unset($this->collection[$identifier]);
 
         return true;
     }
 
-    private function exist(int $id)
+    private function exist(int $identifier): bool
     {
-        return !empty($this->collection[$id]);
+        return !empty($this->collection[$identifier]);
     }
 
-    private function count()
+    private function count(): int
     {
         return \count($this->collection);
     }

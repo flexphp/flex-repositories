@@ -59,14 +59,14 @@ class RepositoryTest extends TestCase
         $repository = new RepositoryMock();
         $repository->setGateway($gateway);
 
-        $id = 1;
+        $identifier = 1;
         $item = ['foo'];
         $notExist = 999;
 
-        $this->assertSame($id, $repository->push($item));
-        $this->assertSame($item, $repository->get($id));
-        $this->assertSame(true, $repository->shift($id, $item));
-        $this->assertSame(true, $repository->pop($id));
+        $this->assertSame($identifier, $repository->push($item));
+        $this->assertSame($item, $repository->get($identifier));
+        $this->assertSame(true, $repository->shift($identifier, $item));
+        $this->assertSame(true, $repository->pop($identifier));
 
         $this->assertSame(null, $repository->get($notExist));
         $this->assertSame(false, $repository->shift($notExist, []));

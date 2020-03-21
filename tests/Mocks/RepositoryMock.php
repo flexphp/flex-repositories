@@ -31,9 +31,9 @@ final class RepositoryMock extends Repository
      *
      * @return null|array
      */
-    public function get(int $id)
+    public function get(int $identifier)
     {
-        return $this->getGateway()->read($id);
+        return $this->getGateway()->read($identifier);
     }
 
     /**
@@ -41,9 +41,9 @@ final class RepositoryMock extends Repository
      *
      * @return bool
      */
-    public function shift(int $id, array $item)
+    public function shift(int $identifier, array $item)
     {
-        return $this->getGateway()->update($id, $item);
+        return $this->getGateway()->update($identifier, $item);
     }
 
     /**
@@ -51,8 +51,8 @@ final class RepositoryMock extends Repository
      *
      * @return bool
      */
-    public function pop(int $id)
+    public function pop(int $identifier)
     {
-        return $this->getGateway()->delete($id);
+        return $this->getGateway()->delete($identifier);
     }
 }
