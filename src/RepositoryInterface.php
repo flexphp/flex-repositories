@@ -23,10 +23,8 @@ interface RepositoryInterface
      * Set client|connection to use in repository
      *
      * @param mixed $gateway
-     *
-     * @return RepositoryInterface
      */
-    public function setGateway($gateway): self;
+    public function setGateway($gateway): void;
 
     /**
      * Get client|connection setup by constructor or setGateway method

@@ -25,11 +25,9 @@ abstract class Repository implements RepositoryInterface
         }
     }
 
-    public function setGateway($gateway): RepositoryInterface
+    public function setGateway($gateway): void
     {
         $this->gateway = $gateway;
-
-        return $this;
     }
 
     /**

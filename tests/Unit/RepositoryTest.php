@@ -44,8 +44,8 @@ class RepositoryTest extends TestCase
         $gateway = new GatewayMock();
 
         $repository = new RepositoryMock();
+        $repository->setGateway($gateway);
 
-        $this->assertSame($repository, $repository->setGateway($gateway));
         $this->assertSame($gateway, $repository->getGateway());
     }
 
