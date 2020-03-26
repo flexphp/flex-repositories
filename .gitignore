@@ -4,4 +4,3 @@
 tests/coverage
 vendor
 infection.*
-
