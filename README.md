@@ -1,3 +1,5 @@
+# DEPRECATED
+
 # Repositories
 
 [![Latest Stable Version](https://poser.pugx.org/flexphp/repositories/v/stable)](https://packagist.org/packages/flexphp/repositories)
